@@ -21,11 +21,6 @@
       "file": "SEA_FO.json"
     },
     {
-      "base": "PDX",
-      "seat": "FO",
-      "file": "PDX_FO.json"
-    },
-    {
       "base": "SFO",
       "seat": "CA",
       "file": "SFO_CA.json"
@@ -44,6 +39,11 @@
       "base": "LAX",
       "seat": "FO",
       "file": "LAX_FO.json"
+    },
+    {
+      "base": "PDX",
+      "seat": "FO",
+      "file": "PDX_FO.json"
     }
   ]
 }
