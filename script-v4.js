@@ -32,22 +32,12 @@ async function loadPilots(file){
   return r.json();
 }
 
-// lowerBound: first index i where nums[i] >= target
+// lowerBound: first index where nums[i] >= target
 function lowerBound(nums, target){
   let lo=0, hi=nums.length;
   while(lo<hi){
     const m=(lo+hi)>>1;
     if(nums[m] < target) lo=m+1; else hi=m;
-  }
-  return lo; // 0..len
-}
-
-// Count of <= target
-function countLTE(nums, target){
-  let lo=0, hi=nums.length;
-  while(lo<hi){
-    const m=(lo+hi)>>1;
-    if(nums[m] <= target) lo=m+1; else hi=m;
   }
   return lo;
 }
@@ -64,10 +54,10 @@ async function calcOne(combo,sn){
   const eqIndex = seniors.indexOf(sn);
   let rank;
   if (eqIndex !== -1){
-    rank = eqIndex + 1; // exact match
+    rank = eqIndex + 1;
   } else {
     const insertAt = lowerBound(seniors, sn);
-    rank = insertAt + 1; // hypothetical position (top case => 0+1 = 1)
+    rank = insertAt + 1; // ensures top case → rank = 1
   }
   return {seat:combo.seat, base:combo.base, rank, total, pct:pct(rank,total)};
 }
@@ -101,7 +91,6 @@ function renderListTitle(base, seat){
   if(el) el.textContent=`Pilot List — ${base} ${seat}`;
 }
 
-// Render roster and slot/insert the typed seniority
 function renderList(base, seat, pilots, sn){
   const tb=document.querySelector('#list tbody');
   if(!tb) return;
@@ -113,7 +102,6 @@ function renderList(base, seat, pilots, sn){
 
   const eqIndex = sorted.findIndex(p=>Number(p.seniority)===sn);
   if(eqIndex !== -1){
-    // highlight real row
     for(let i=0;i<sorted.length;i++){
       const p=sorted[i];
       const tr=document.createElement('tr');
@@ -128,11 +116,9 @@ function renderList(base, seat, pilots, sn){
     return;
   }
 
-  // Hypothetical insert
   const insertAt = lowerBound(seniors, sn); // 0..total (top case => 0)
   for(let i=0;i<sorted.length;i++){
     if(i===insertAt){
-      // Insert the "(you — hypothetical)" row exactly here
       const tr=document.createElement('tr');
       tr.className='you';
       tr.innerHTML = `<td class="c-snr">${sn}</td>
@@ -150,7 +136,6 @@ function renderList(base, seat, pilots, sn){
     tb.appendChild(tr);
   }
   if(insertAt===sorted.length){
-    // Goes at the very end (most junior)
     const tr=document.createElement('tr');
     tr.className='you';
     tr.innerHTML = `<td class="c-snr">${sn}</td>
