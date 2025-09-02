@@ -3,15 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pilot Seniority — Best Base by Seat</title>
-  <link rel="stylesheet" href="styles-v2.css?v=3" />
+  <title>Pilot Seniority What-If</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <main class="container">
-    <h1>Pilot Seniority — Best Base by Seat</h1>
+    <h1>Pilot Seniority What-If</h1>
+
     <div class="inputs">
       <label>Seniority #
-        <input type="number" id="sn" />
+        <input type="number" id="sn" min="1" step="1" />
       </label>
       <label>Base
         <select id="base"></select>
@@ -25,18 +26,26 @@
 
     <section class="card">
       <h2>Best Base by Seat</h2>
-      <table id="best"><thead><tr>
-        <th>Seat</th><th>Base</th><th>Rank</th><th>Total</th><th>%</th>
-      </tr></thead><tbody></tbody></table>
+      <table id="best">
+        <thead>
+          <tr><th>Seat</th><th>Base</th><th>Rank</th><th>Total</th><th>%</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
     </section>
 
     <section class="card">
       <h2 id="listTitle">Pilot List</h2>
-      <table id="list"><thead><tr>
-        <th>Seniority</th><th>Name</th><th>Rank</th><th>Total</th>
-      </tr></thead><tbody></tbody></table>
+      <table id="list">
+        <thead>
+          <tr><th>Seniority</th><th>Name</th><th>Rank</th><th>Total</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
     </section>
   </main>
-  <script src="script-v4.js?v=4"></script>
+
+  <!-- point to the patched script with cache-buster -->
+  <script src="script-v4.js?v=5"></script>
 </body>
 </html>
