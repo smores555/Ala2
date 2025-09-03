@@ -42,6 +42,11 @@
     },
     {
       "base": "PDX",
+      "seat": "CA",
+      "file": "PDX_CA.json"
+    },
+    {
+      "base": "PDX",
       "seat": "FO",
       "file": "PDX_FO.json"
     }
