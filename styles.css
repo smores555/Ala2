@@ -40,3 +40,10 @@ table tbody tr:hover{background:var(--as-blue-verylight)}
 #list tbody td:nth-child(2){ background:#ffffff }                                     /* Name */
 #list tbody td:nth-child(3),
 #list tbody td:nth-child(4){ background:var(--as-blue-verylight); font-variant-numeric:tabular-nums }
+
+/* === Restore "you" / hypothetical highlight === */
+#list tbody tr.you td,
+#list tbody tr.hypothetical td {
+  background: #cfe5cf !important;  /* soft green highlight */
+  font-weight: 600;
+}
