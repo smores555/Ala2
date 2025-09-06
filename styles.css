@@ -1,5 +1,4 @@
 
-/* === Palette === */
 :root{
   --as-mint:#CFEFD4;
   --as-blue-light:#DCEAF8;
@@ -9,7 +8,6 @@
   --as-border:#E6E6E6;
 }
 
-/* Layout & header */
 .site-logo{height:96px}
 @media (max-width:600px){ .site-logo{height:80px} }
 .site-header{background:var(--as-mint); border-bottom:1px solid var(--as-border)}
@@ -20,30 +18,26 @@
 .inputs input,.inputs select,.inputs button{padding:.45rem .5rem; border:1px solid var(--as-border); border-radius:4px}
 .inputs button{cursor:pointer}
 
-/* Table base styles */
 table{border-collapse:separate; border-spacing:0; width:100%}
 table thead th{background:var(--as-navy); color:#fff; padding:.55rem .5rem; position:sticky; top:0}
 table tbody td{padding:.5rem .5rem; border-bottom:1px solid #dde3ee}
 table tbody tr:nth-child(even){background:#f9fbff}
 table tbody tr:hover{background:var(--as-blue-verylight)}
 
-/* === Explicit column coloring === */
-/* #best: Seat | Base | Rank | Total | % */
-#best tbody td:nth-child(1){ background:#f5fff8 }          /* Seat: faint mint-tint */
-#best tbody td:nth-child(2){ background:var(--as-blue-light) }  /* Base: light blue */
+/* Explicit column coloring */
+#best tbody td:nth-child(1){ background:#f5fff8 }
+#best tbody td:nth-child(2){ background:var(--as-blue-light) }
 #best tbody td:nth-child(3),
 #best tbody td:nth-child(4),
 #best tbody td:nth-child(5){ background:#f6f9fe; font-variant-numeric:tabular-nums }
 
-/* #list: Seniority | Name | Rank | Total */
-#list tbody td:nth-child(1){ background:#f6f9fe; font-variant-numeric:tabular-nums } /* Seniority */
-#list tbody td:nth-child(2){ background:#ffffff }                                     /* Name */
+#list tbody td:nth-child(1){ background:#f6f9fe; font-variant-numeric:tabular-nums }
+#list tbody td:nth-child(2){ background:#ffffff }
 #list tbody td:nth-child(3),
 #list tbody td:nth-child(4){ background:var(--as-blue-verylight); font-variant-numeric:tabular-nums }
 
-/* === Restore "you" / hypothetical highlight === */
-#list tbody tr.you td,
-#list tbody tr.hypothetical td {
-  background: #cfe5cf !important;  /* soft green highlight */
+/* Green highlight for "you" row */
+#list tbody tr.you td {
+  background: #cfe5cf !important;
   font-weight: 600;
 }
