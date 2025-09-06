@@ -36,8 +36,8 @@ table tbody tr:hover{background:var(--as-blue-verylight)}
 #list tbody td:nth-child(3),
 #list tbody td:nth-child(4){ background:var(--as-blue-verylight); font-variant-numeric:tabular-nums }
 
-/* Green highlight for "you" row */
+/* Neon green highlight for "you" row */
 #list tbody tr.you td {
-  background: #cfe5cf !important;
+  background: #39FF14 !important;  /* neon green */
   font-weight: 600;
 }
