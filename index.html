@@ -1,21 +1,22 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <script>
-  // === Simple Password Protection (client-side only) ===
-  const password = "alpa2025";  // change this to your desired password
+<script>
+  const password = "alpa2025";  
   const entered = sessionStorage.getItem("siteAccess");
 
   if (!entered) {
     const input = prompt("Enter password to access this site:");
     if (input !== password) {
-      document.body.innerHTML = "<h1>Access Denied</h1>";
+      document.write("<h1>Access Denied</h1>");
+      document.close();
       throw new Error("Unauthorized access");
     } else {
       sessionStorage.setItem("siteAccess", "granted");
     }
   }
 </script>
+
 
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
