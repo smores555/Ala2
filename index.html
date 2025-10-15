@@ -1,21 +1,6 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <script>
-    (function(){
-      const PASSWORD = "alpa2025";
-      if (sessionStorage.getItem("siteAccess") === "granted") return;
-      const input = prompt("Enter password to access this site:");
-      if (input === null || input !== PASSWORD) {
-        document.open();
-        document.write("<h1>Access Denied</h1>");
-        document.close();
-        throw new Error("Unauthorized access");
-      }
-      sessionStorage.setItem("siteAccess", "granted");
-    })();
-  </script>
-
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pilot Seniority What-If</title>
