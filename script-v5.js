@@ -175,7 +175,8 @@ function renderList(base, seat, pilots, sn){
   for(let i=0;i<sorted.length;i++){
     if(i===insertAt){
       const tr=document.createElement('tr');
-      tr.className='you';
+    tr.className = 'you';
+tr.setAttribute('data-you', 'true');   // 👈 Add this line
       tr.innerHTML = `<td class="c-snr">${sn}</td>
                       <td class="c-name">(you — hypothetical)</td>
                       <td class="c-rank">${i+1}</td>
